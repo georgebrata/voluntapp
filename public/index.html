@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VoluntApp</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/my-styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <style>
+      body, html {
+        padding: 0;
+        margin: 0;
+      }
+      .content-heading {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .input-area {
+        padding-bottom: 10px;
+      }
+      .page-container {
+        width: 100%;
+      }
+      .nav-breadcrumbs {
+        padding-bottom: 10px;
+      }
+      .error-container {
+        color: #ff0000;
+      }
+    </style>
+
+    <script src="/node_modules/socketcluster-client/socketcluster.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script src="/node_modules/vue-router/dist/vue-router.min.js"></script>
+    <script src="/app-inventory.js" type="module"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

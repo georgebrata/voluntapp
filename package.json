@@ -1,0 +1,30 @@
+{
+  "name": "Voluntapp",
+  "description": "A simple app for organising volunteer events",
+  "version": "2.0.0",
+  "contributors": [
+    {
+      "name": "George Brata",
+      "email": "bratageorge@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "component-emitter": "1.2.1",
+    "connect": "^3.6.6",
+    "express": "4.16.3",
+    "minimist": "1.1.0",
+    "sc-crud-rethink": "^7.1.0",
+    "scc-broker-client": "^6.0.1",
+    "serve-static": "1.13.2",
+    "socketcluster": "^14.2.1",
+    "socketcluster-client": "^14.1.0"
+  },
+  "keywords": [
+    "websocket",
+    "server",
+    "realtime",
+    "cluster",
+    "scalable"
+  ],
+  "readmeFilename": "README.md"
+}
