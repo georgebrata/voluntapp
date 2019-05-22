@@ -5,3 +5,7 @@
 .page-content {
     padding: 80px 60px;
 }
+main {
+    max-width: 1100px;
+    text-align: center;
+}
