@@ -10,9 +10,9 @@ Inainte sa predai aplicatia citeste asta:
 # Sterge textul de mai sus, nu uita 👆
 
 # VoluntApp ヽ( ・∀・)ﾉ
+Working demo 👉 (http://1c2b3dc3.ngrok.io/) 
 
 ## About
-Working demo 👉 (http://1c2b3dc3.ngrok.io/) 
 Scroll to the bottom for _installation instructions._
 
 A simple events tracking single page app, built with SocketCluster for real-time updates across multiple clients. On frontend we used Vue + ElementUI for a nice, easy to use and clean interface. On backend we used RethinkDB as a database for fast, bi-directional database connections.
