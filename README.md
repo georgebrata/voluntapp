@@ -4,6 +4,7 @@ Inainte sa predai aplicatia citeste asta:
 2. https://hackernoon.com/real-time-crud-guide-back-end-part-2-1fd3d4d1ef67 - tutorial dupa care m-am luat in creerea vackend-ului aplicatiei, un bun inceput ca sa ai o imagine de ansamblu la ce se intampla in aplicatie
 3. Readme-ul de mai jos - te sfatuiesc sa te uiti peste docmentatiile librariilor oficiale pe care le-am folosit in aplicatie
 4. Pasii de instalare - trebuie sa iti instalezi programele de acolo si apoi sa iti deschizi un terminal si sa rulezi comenzile de acolo. Daca ai intrebari, scrie-mi un email pe bratageorge@gmail.com
+5. DEMO-ul functioneaza doar cand serverul meu (George) este pornit. Il voi tine pornit pentru azi si maine (22-23 mai), dar il voi opri dupa ce reusesti sa-ti faci si tu setup-ul.
 
 ---
 # Sterge textul de mai sus, nu uita 👆
@@ -11,6 +12,7 @@ Inainte sa predai aplicatia citeste asta:
 # VoluntApp ヽ( ・∀・)ﾉ
 
 ## About
+Working demo 👉 (http://1c2b3dc3.ngrok.io/) 
 Scroll to the bottom for _installation instructions._
 
 A simple events tracking single page app, built with SocketCluster for real-time updates across multiple clients. On frontend we used Vue + ElementUI for a nice, easy to use and clean interface. On backend we used RethinkDB as a database for fast, bi-directional database connections.
@@ -43,5 +45,5 @@ Keep in mind that this app is optimized for cutting-edgeness, not for backwards 
 - Run ```cd public && npm install && cd ..``` (to install front end modules inside the public/ directory)
 - In a different terminal (or in the background), run ```sudo rethinkdb``` (make sure RethinkDB stays running)
 - Run ```node server``` (to launch the server)
-- In your browser, go to ```http://localhost:8000/```
+- In your browser, go to ```http://localhost:9999/```
 

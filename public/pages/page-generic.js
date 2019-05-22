@@ -20,7 +20,7 @@ function getPageComponent(pageOptions) {
                 <a class="nav-link" href="#/despre-noi">Despre noi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#/">Evenimente</a>
+                <a class="nav-link" href="#/events">Evenimente</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#/implica-te">Implica-te</a>

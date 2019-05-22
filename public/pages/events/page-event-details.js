@@ -29,7 +29,7 @@ function getPageComponent(pageOptions) {
       },
       saveValue: function () {
         this.eventModel.save();
-        window.location = "/#/";
+        window.location = "/#/events";
       }
     },
     template: `
@@ -42,25 +42,25 @@ function getPageComponent(pageOptions) {
         <div class="input-area">
           <label for="input-name">Name:</label>
           <div>
-            <input id="input-name" type="text" class="form-control" v-model="event.name" @change="saveValue">
+            <input id="input-name" type="text" class="form-control" v-model="event.name">
           </div>
         </div>
           <div class="input-area">
             <label for="input-qty">Data:</label>
             <div>
-              <input id="input-qty" type="text" class="form-control" v-model="event.date" @change="saveValue">
+              <input id="input-qty" type="text" class="form-control" v-model="event.date">
             </div>
           </div>
           <div class="input-area">
             <label for="input-price">Maxim participanti:</label>
             <div>
-              <input id="input-price" type="text" class="form-control" v-model="event.maxAttendees" @change="saveValue">
+              <input id="input-price" type="text" class="form-control" v-model="event.maxAttendees">
             </div>
           </div>
           <div class="input-area">
             <label for="input-desc">Descrierea evenimentului:</label>
             <div>
-              <textarea id="input-desc" type="text" class="form-control" v-model="event.desc" @change="saveValue"></textarea>
+              <textarea id="input-desc" type="text" class="form-control" v-model="event.desc"></textarea>
             </div>
           </div>
           <div style="width:100%; text-align: center;">

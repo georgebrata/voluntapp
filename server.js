@@ -4,7 +4,7 @@ var SocketCluster = require('socketcluster');
 var socketCluster = new SocketCluster({
   workers: Number(argv.w) || 1,
   brokers: Number(argv.b) || 1,
-  port: Number(argv.p) || 8000,
+  port: Number(argv.p) || 9999,
   authKey: 'todo',
   appName: argv.n || null,
   workerController: __dirname + '/worker.js',

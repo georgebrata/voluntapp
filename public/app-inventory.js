@@ -30,7 +30,8 @@ let routes = [
   { path: '/despre-noi', component: DespreNoiPage, props: true },
   { path: '/implica-te', component: ImplicatePage, props: true },
   { path: '/echipa-noastra', component: EchipaPage, props: true },
-  { path: '/', component: PageCategoryList, props: true },
+  { path: '/events', component: PageCategoryList, props: true },
+  { path: '/', component: DespreNoiPage, props: true },
 ];
 
 let router = new VueRouter({
