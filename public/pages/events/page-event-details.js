@@ -29,14 +29,15 @@ function getPageComponent(pageOptions) {
       },
       saveValue: function () {
         this.eventModel.save();
+        window.location = "/#/";
       }
     },
     template: `
       <div class="page-container">
-        <div class="nav-breadcrumbs">
-          <a :href="computeCategoryDetailsUrl(categoryId)"><< Inapoi la categoria parinte</a>
+        <div class="nav-breadcrumbs"> 
+          <a :href="computeCategoryDetailsUrl(categoryId)" style="position: fixed; top: 20px; left: 20px;"><< Inapoi la categoria parinte</a>
         </div>
-        <h2 class="content-heading">#<span>{{event.id}}</span>&nbsp;-&nbsp;<span>{{event.name}}</span></h2>
+        <h1 class="content-heading">#<span>{{event.id}}</span>&nbsp;-&nbsp;<span>{{event.name}}</span></h1>
         <div class="content-body">
         <div class="input-area">
           <label for="input-name">Name:</label>
@@ -45,7 +46,7 @@ function getPageComponent(pageOptions) {
           </div>
         </div>
           <div class="input-area">
-            <label for="input-qty">Date:</label>
+            <label for="input-qty">Data:</label>
             <div>
               <input id="input-qty" type="text" class="form-control" v-model="event.date" @change="saveValue">
             </div>
@@ -57,13 +58,13 @@ function getPageComponent(pageOptions) {
             </div>
           </div>
           <div class="input-area">
-            <label for="input-desc">Description:</label>
+            <label for="input-desc">Descrierea evenimentului:</label>
             <div>
-              <input id="input-desc" type="text" class="form-control" v-model="event.desc" @change="saveValue">
+              <textarea id="input-desc" type="text" class="form-control" v-model="event.desc" @change="saveValue"></textarea>
             </div>
           </div>
-          <div>
-            <b>Press enter key to save.</b>
+          <div style="width:100%; text-align: center;">
+            <button type="button" class="btn btn-primary" @click="saveValue">Salveaza modificarile</button>
           </div>
         </div>
       </div>

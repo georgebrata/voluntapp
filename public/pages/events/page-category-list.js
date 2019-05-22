@@ -57,7 +57,7 @@ function getPageComponent(pageOptions) {
     template: `
         <div>
 
-          <h2 class="content-heading">Categorii de evenimente</h2>
+          <h1 class="content-heading">Categorii de evenimente</h1>
           <div class="category-list">
             <table class="table">
               <tr>

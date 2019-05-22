@@ -136,66 +136,90 @@ function getPageComponent(pageOptions) {
     },
     template: `
       <div class="page-container">
-        <a href="/#/"><< Inapoi la categorii</a>
-        <h2 class="content-heading">{{category.name}}</h2>
+        <a href="/#/" style="position: fixed; top: 20px; left: 20px;"><< Inapoi la categorii</a>
+        <h1 class="content-heading">{{category.name}}</h1>
         <div class="content-body">
+          <!--
           <div class="all-category-events">
             <p>
               <h4>Descrierea categoriei</h4>
               <span>{{category.desc}}</span>
             </p>
-            <h4>Events:</h4>
-            <div style="min-height: 300px;">
-              <table class="table">
-                <tr>
-                  <th>Name</th>
-                  <th>Date</th>
-                  <th>Max. participanti</th>
-                </tr>
-                <tr v-for="event of events">
-                  <td><a :href="computeEventDetailsUrl(category, event)">{{event.name}}</a></td>
-                  <td>{{event.date}}</td>
-                  <td>{{event.maxAttendees}}</td>
-                </tr>
-              </table>
-            </div>
+          </div>
+          -->
 
-            <div class="control-bar">
-              <div style="padding-bottom: 20px;">
-                <a href="javascript:void(0);" @click="goToPrevPage">Prev page</a> <span>Items </span><span>{{firstItemIndex}}</span><span> to </span><span>{{lastItemIndex}}</span> of <span>{{eventsMeta.count}}</span> <a href="javascript:void(0);" @click="goToNextPage">Next page</a>
-              </div>
-              <div style="width: 50%; float: left; margin-right: 10px;">
-                <input type="text" class="form-control" v-model="newEventName" @keydown="inputKeyDown">
-              </div>
-              <input type="button" class="btn btn-secondary" value="Adauga eveniment" @click="addEvent">
-              <input type="checkbox" class="checkbox" style="margin-left: 10px; margin-top: 0;" v-model="realtime" @change="toggleRealtime"> <span>real-time</span>
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Toate evenimentele</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Saptamana aceasta</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <h4>Events:</h4>
+                  <div style="min-height: 300px;">
+                    <table class="table">
+                      <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Max. participanti</th>
+                      </tr>
+                      <tr v-for="event of events">
+                        <td><a :href="computeEventDetailsUrl(category, event)">{{event.name}}</a></td>
+                        <td>{{event.date}}</td>
+                        <td>{{event.maxAttendees}}</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="control-bar">
+                    <div style="padding-bottom: 20px; text-align: center;">
+                      <a href="javascript:void(0);" @click="goToPrevPage">Pagina anterioara</a><span> {{firstItemIndex}}</span> din <span>{{eventsMeta.count}}</span> <a href="javascript:void(0);" @click="goToNextPage">Pagina urmatoare</a>
+                    </div>
+                    <div style="width: 50%; float: left; margin-right: 10px;">
+                      <input type="text" class="form-control" v-model="newEventName" @keydown="inputKeyDown">
+                    </div>
+                    <input type="button" class="btn btn-secondary" value="Adauga eveniment" @click="addEvent">
+                    <input type="checkbox" class="checkbox" style="margin-left: 10px; margin-top: 0;" v-model="realtime" @change="toggleRealtime"> <span>real-time</span>
+                  </div>
+            
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                <div class="low-stock-category-events">
+                  <h4>Aceasta saptamana</h4>
+                    <div style="min-height: 300px;">
+                      <table class="table">
+                        <tr>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Maxim participanti</th>
+                        </tr>
+                        <tr v-for="event of lowStockEvents">
+                          <td><a :href="computeEventDetailsUrl(category, event)">{{event.name}}</a></td>
+                          <td>{{event.date}}</td>
+                          <td>{{event.price}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--
+                    <div style="margin-bottom: 100px;">
+                      <h4>Low stock threshold:</h4>
+                      <input id="input-desc" type="text" v-model="lowStockThreshold" class="form-control" @change="refreshLowStockCollection" style="width: 100px; float: left; margin-right: 10px;">
+                      <input type="button" class="btn primary-btn" value="Update" @click="refreshLowStockCollection" style="float: left;">
+                    </div>
+                    -->
+                  </div>
             </div>
           </div>
 
-          <hr style="margin-top: 50px; margin-bottom: 50px;">
 
-          <div class="low-stock-category-events">
-          <h4>Aceasta saptamana</h4>
-            <div style="min-height: 300px;">
-              <table class="table">
-                <tr>
-                  <th>Name</th>
-                  <th>Date</th>
-                  <th>Maxim participanti</th>
-                </tr>
-                <tr v-for="event of lowStockEvents">
-                  <td><a :href="computeEventDetailsUrl(category, event)">{{event.name}}</a></td>
-                  <td>{{event.date}}</td>
-                  <td>{{event.price}}</td>
-                </tr>
-              </table>
-            </div>
-            <div style="margin-bottom: 100px;">
-              <h4>Low stock threshold:</h4>
-              <input id="input-desc" type="text" v-model="lowStockThreshold" class="form-control" @change="refreshLowStockCollection" style="width: 100px; float: left; margin-right: 10px;">
-              <input type="button" class="btn primary-btn" value="Update" @click="refreshLowStockCollection" style="float: left;">
-            </div>
-          </div>
+
+
+
+
         </div>
       </div>
     `

@@ -1,8 +1,12 @@
-import getCategoryListPageComponent from '/pages/page-category-list.js';
-import getCategoryDetailsPageComponent from '/pages/page-category-details.js';
-import getEventDetailsPageComponent from '/pages/page-event-details.js';
+import getCategoryListPageComponent from '/pages/events/page-category-list.js';
+import getCategoryDetailsPageComponent from '/pages/events/page-category-details.js';
+import getEventDetailsPageComponent from '/pages/events/page-event-details.js';
 import getLoginPageComponent from '/pages/page-login.js';
 import getPageComponent from '/pages/page-generic.js';
+
+import getDespreNoiPage from '/pages/page-despre-noi.js'
+import getImplicaPage from '/pages/page-implicate.js'
+import getEchipaPage from '/pages/page-echipa.js'
 
 let socket = window.socket = socketCluster.create();
 
@@ -16,10 +20,17 @@ let PageEventDetails = getEventDetailsPageComponent(pageOptions);
 let PageLogin = getLoginPageComponent(pageOptions);
 let Page = getPageComponent(pageOptions);
 
+let DespreNoiPage = getDespreNoiPage(pageOptions);
+let EchipaPage = getEchipaPage(pageOptions);
+let ImplicatePage = getImplicaPage(pageOptions);
+
 let routes = [
   { path: '/category/:categoryId/event/:eventId', component: PageEventDetails, props: true },
   { path: '/category/:categoryId', component: PageCategoryDetails, props: true },
-  { path: '/', component: PageCategoryList, props: true }
+  { path: '/despre-noi', component: DespreNoiPage, props: true },
+  { path: '/implica-te', component: ImplicatePage, props: true },
+  { path: '/echipa-noastra', component: EchipaPage, props: true },
+  { path: '/', component: PageCategoryList, props: true },
 ];
 
 let router = new VueRouter({
